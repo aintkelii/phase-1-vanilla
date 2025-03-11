@@ -79,9 +79,18 @@ const capitalizedFirstLetterOfNames = students.map((student) => {
   // grab each name in the object/element
   studentName = student.name; // student['name']
   // split each character in each name
+  // const characters = studentName.split('');
+  return student.name.charAt(0).toUpperCase() + student.name.slice(1)
   // capitalize the first character of each name
-  // suggestions: slice, map
-  studentName.split('');
+  // const capitalizeFirstChar = characters.map((char, index) => {
+  //   if (index === 0) {
+  //     return char.toLocaleUpperCase();
+  //   } else {
+  //     return char;
+  //   }
+  // });
+  // let capitalized = capitalizeFirstChar.join('');
+  // return { name: capitalized, age: student.age };
 });
 
 // PSEUDOCODE
@@ -90,7 +99,7 @@ const capitalizedFirstLetterOfNames = students.map((student) => {
 // - be able to grab the name of each student (the name is nested inside an object)
 // --->dot notation
 // - grab the first letter/character of each and every name.
-// --> split(), charAt by checking the index position of that first letter which is zero (0) 
+// --> split(), charAt by checking the index position of that first letter which is zero (0)
 // - capitalizing the first character/index
 // --> toUpperCase()
 // return our modified array with the names

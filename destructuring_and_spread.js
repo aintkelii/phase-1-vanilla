@@ -100,4 +100,67 @@ const updatedUser = {
   email: 'vincent@mail.org',
   linkedIn: 'linkedin/vincent-job',
 };
-console.log(updatedUser);
+// console.log(updatedUser);
+
+// more examples on spread operator...
+// cloning/copy an array
+const original = ['apples', 'mangoes', 'oranges', 'bananas'];
+const cloned = [...original];
+// console.log(original, cloned);
+
+// spreading an array inside objects
+const students = ['alice', 'john', 'jane'];
+// const beginningOfStudents = ['joseph', ...students];
+// const startAndEnd = ['joseph', ...students, 'mary'];
+const classData = {
+  course: 'software development',
+  studentsList: ['joseph', ...students, 'mary'],
+};
+
+// console.log(classData);
+
+// merge and update objects
+//update nested object (address{}) --> updating the city: 'nakuru, add postalNumber: 670
+const userData = {
+  name: 'john',
+  age: 12,
+  address: { city: 'nairobi', postalCode: '00100' }, //
+};
+
+const updateUser = {
+  ...userData,
+  country: 'uganda',
+  hobbies: 'hiking',
+  age: 24,
+  address: { ...userData.address, city: 'nakuru', postalNumber: 670 },
+};
+// console.log(updateUser);
+
+// remove duplicates from an array
+// research on the Set() method
+const duplicates = [1, 2, 2, 3, 4, 3, 6, 7, 7, 8, 10, 10, 11, 12, 20];
+const uniqueNums = [...new Set(duplicates)];
+// console.log(uniqueNums);
+
+// adding objects inside an array
+const StudentsList = [
+  { id: 1, name: 'ken', age: 20 },
+  { id: 2, name: 'mark', age: 24 },
+  { id: 3, name: 'luke', age: 19 },
+  { id: 4, name: 'john', age: 24 },
+];
+
+const updatedStudentsList = [
+  ...StudentsList,
+  { id: 3, name: 'charlie', age: 23 },
+];
+// console.log(updatedStudentsList);
+
+// updating an object inside an array
+const updated = StudentsList.map((student) => {
+  // logic here
+  // check for student with id === 2, and update their age to 34
+  return student.id === 2 ? { ...student, age: 34 } : student;
+});
+
+console.log(updated);

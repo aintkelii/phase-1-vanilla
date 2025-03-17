@@ -84,7 +84,8 @@ alphabet.sort();
 
 // concat
 const arr1 = [1, 2, 3];
-const arr2 = [4, 5, 6, 7, 8, 100];
+// const arr2 = [4, 5, 6, 7, 8, 100];
+const arr2 = [5, 6, 7, 8];
 const combined = arr1.concat(arr2); // [ 1, 2, 3, 4, 5, 6, 7, 8, 100 ]
 // const combined2 = arr2.concat(arr1); // [4, 5, 6, 7, 8, 100, 1, 2, 3]
 // console.log(combined); // [ 1, 2, 3, 4, 5, 6, 7, 8 ]
@@ -100,11 +101,41 @@ const sliced2 = combined.slice(1, 3); // [2, 3]
 // console.log(sliced2);
 // [3, 4, 5, 6, 7]
 const sliced3 = combined.slice(2, 7);
-console.log(sliced3);
-
-console.log(combined.indexOf(1));
-console.log(combined.includes(100));
+// console.log(sliced3);
+// console.log(combined.indexOf(1));
+// console.log(combined.includes(100));
 
 // exercise for slice --> use negative index
+const slice4 = combined.slice(-2, 7);
+// console.log(slice4);
+
+let fruits2 = ['apple', 'banana', 'cherry', 'date', 'orange', 'mango'];
+let lastItems = fruits2.slice(-4, -1); // ["cherry", "date", "orange"]
+
+// console.log(lastItems);
 
 //splice
+const digits = [10, 20, 30, 40, 50];
+// console.log(digits);
+
+// arr.splice(startIndex, deleteCount, item1, item2)
+//startIndex - needed.
+// deleteCount - optional --> number of elements to be deleted
+// item1, item2 - optional --> the items to be added from the startIndex
+
+// 1. remove specified elements in our array
+// --> arr.splice(startIndex, deleteCount)
+
+// digits.splice(2) --> [10, 20]
+digits.splice(2, 1); // --> [10, 20, 40, 50]
+digits.splice(2, 2); // --> [10, 20, 50]
+// console.log(digits);
+
+// 2. add elements in our array without removing any other element --> set deleCount to 0
+const colors = ['white', 'green', 'blue'];
+// colors.splice(1, 0, 'yellow', 'red');
+// console.log(colors);
+
+// 3. replace elements with new ones --> assign deleteCount a value
+colors.splice(1, 2, 'yellow', 'red', 'orange');
+console.log(colors);
